@@ -6,11 +6,14 @@
 " Install vundle to manage plugins:
 " Create under c/Users/Me   vimfiles/bundle directory
 " And put there your plugins including Vundle.vim
+" 
 " Commands like PluginUpdate you can find on internet, просто пиши команды в
 " коммандной строке. 
+"
 " NERDTree - to start it
-" Translit - что бы включить транслит выйди в мод навигации и нажми Ctrl+Shift+t, и опять зайди в мод редактировки. 
-
+" 
+" Translit - что бы включить транслит выйди в мод навигации и нажми Ctrl+Shift+t,
+" и опять зайди в мод редактировки. 
 
 set nocompatible
 filetype off
@@ -23,21 +26,22 @@ set rtp+=~/vimfiles/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-
 Plugin 'scrooloose/nerdtree'
-
 Plugin 'einars/translit.vim'
-         
 Plugin 'ctrlpvim/ctrlp.vim'
-
 " TODO: tpope vim-fugitive plugin
 " Plugin 'tpope/vim-fugitive'
-
 " this plugin is from vim.org : L9
 
 call vundle#end()
+
 filetype plugin indent on
+
 set number
 set nowrap
 
+" Auto start nerdtree
+"au VimEnter *  NERDTree
+
+" Hotkeys mapping
 nnoremap <F3> :NERDTreeToggle<CR>
