@@ -32,6 +32,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 " TODO: tpope vim-fugitive plugin
 " Plugin 'tpope/vim-fugitive'
@@ -69,7 +71,7 @@ set undolevels=1000             	" Number of undo levels
 set backspace=indent,eol,start  	" Backspace behaviour
 
 set background=dark
-colorscheme slate					           " Color scheme
+colorscheme badwolf					           " Color scheme
 
 "au VimEnter *  NERDTree			      " Auto start nerdtree
 
