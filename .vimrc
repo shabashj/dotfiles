@@ -1,4 +1,4 @@
-" This vimrc is for Vim under Windows
+" vimrc is for Vim under Windows
 " Put this file in c:/Users/Me/
 " This file should be saved and updated in GDrive
 " Install Git, Conemu, gVim
@@ -18,7 +18,7 @@
 set nocompatible
 filetype off
 
-set rtp+=~/vimfiles/bundle/Vundle.vim	" set Runtime path to inc Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim	" set Runtime path to inc Vundle and initialize
 
 call vundle#begin()			" this is the call to begin the Vundle Plugin Opperation
 Plugin 'gmarik/Vundle.vim'
@@ -64,6 +64,7 @@ set smarttab                    	"Enable smart-tabs
 set softtabstop=4               	"Number of spaces per Tab
 set guifont=Dejavu\ Sans\ Mono:h16 	"Set font and size
 
+
 "Advanced
 set ruler                       	" Show row and column ruler information
 set undolevels=1000             	" Number of undo levels
@@ -71,6 +72,7 @@ set backspace=indent,eol,start  	" Backspace behaviour
 
 set background=dark
 colorscheme badwolf					" Color scheme
+
 
 
 " Hotkeys mapping
