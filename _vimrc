@@ -86,15 +86,15 @@ imap { {}<LEFT>
 ".vimrc
 "map <c-f> :call JsBeautify()<cr>
 " or
-autocmd FileType javascript noremap <buffer>  <c-b> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <F2> :call JsBeautify()<cr>
 " for json
-autocmd FileType json noremap <buffer> <c-b> :call JsonBeautify()<cr>
+autocmd FileType json noremap <buffer> <F2> :call JsonBeautify()<cr>
 " for jsx
-autocmd FileType jsx noremap <buffer> <c-b> :call JsxBeautify()<cr>
+autocmd FileType jsx noremap <buffer> <F2> :call JsxBeautify()<cr>
 " for html
-autocmd FileType html noremap <buffer> <c-b> :call HtmlBeautify()<cr>
+autocmd FileType html noremap <buffer> <F2> :call HtmlBeautify()<cr>
 " for css or scss
-autocmd FileType css noremap <buffer> <c-b> :call CSSBeautify()<cr>
+autocmd FileType css noremap <buffer> <F2> :call CSSBeautify()<cr>
 
 
 let NERDTreeShowHidden=1
