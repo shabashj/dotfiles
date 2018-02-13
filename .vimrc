@@ -18,9 +18,9 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim	" set Runtime path to inc Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim	      "set Runtime path to inc Vundle and initialize
 
-call vundle#begin()			" this is the call to begin the Vundle Plugin Opperation
+call vundle#begin()			                  " this is the call to begin the Vundle Plugin Opperation
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'einars/translit.vim'
@@ -44,36 +44,33 @@ syntax enable
 filetype plugin indent on
 
 "General
-"set lines=50 columns=170			"Set window startup size
-set number							"Show line numbers
-set linebreak						"Break lines at word (requires Wrap lines)
-"set showbreak=+++					"Wrap-broken line prefix
-set textwidth=100					"Line wrap (number of cols)
-set showmatch						"Highlight matching brace
-set visualbell						"Use visual bell (no beeping)
+"set lines=50 columns=170			        "Set window startup size
+set number							                   "Show line numbers
+set linebreak						                 "Break lines at word (requires Wrap lines)
+"set showbreak=+++					             "Wrap-broken line prefix
+set textwidth=100					              "Line wrap (number of cols)
+set showmatch						                 "Highlight matching brace
+set visualbell						                "Use visual bell (no beeping)
  			
-set hlsearch						"Highlight all search results
-set smartcase						"Enable smart-case search
-set ignorecase						"Always case-insensitive
-set incsearch						"Searches for strings incrementally
+set hlsearch						                  "Highlight all search results
+set smartcase						                 "Enable smart-case search
+set ignorecase						                "Always case-insensitive
+set incsearch						                 "Searches for strings incrementally
  			
-set autoindent						"Auto-indent new lines
-set shiftwidth=4					"Number of auto-indent spaces
-set smartindent                		"Enable smart-indent
-set smarttab                    	"Enable smart-tabs
-set softtabstop=4               	"Number of spaces per Tab
+set autoindent						                "Auto-indent new lines
+set shiftwidth=4					               "Number of auto-indent spaces
+set smartindent                	  	 "Enable smart-indent
+set smarttab                    	   "Enable smart-tabs
+set softtabstop=4               	   "Number of spaces per Tab
 set guifont=Dejavu\ Sans\ Mono:h16 	"Set font and size
 
 
 "Advanced
-set ruler                       	" Show row and column ruler information
-set undolevels=1000             	" Number of undo levels
-set backspace=indent,eol,start  	" Backspace behaviour
-
-set background=dark
-colorscheme badwolf					" Color scheme
-
-
+set ruler                       	   " Show row and column ruler information
+set undolevels=1000             	   " Number of undo levels
+set backspace=indent,eol,start  	   " Backspace behaviour
+set background=dark   
+colorscheme badwolf					            " Color scheme
 
 " Hotkeys mapping
 nnoremap <F3> :NERDTreeToggle<CR>
@@ -88,15 +85,15 @@ imap { {}<LEFT>
 ".vimrc
 "map <c-f> :call JsBeautify()<cr>
 " or
-autocmd FileType javascript noremap <buffer>  <c-b> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <F2> :call JsBeautify()<cr>
 " for json
-autocmd FileType json noremap <buffer> <c-b> :call JsonBeautify()<cr>
+autocmd FileType json noremap <buffer> <F2> :call JsonBeautify()<cr>
 " for jsx
-autocmd FileType jsx noremap <buffer> <c-b> :call JsxBeautify()<cr>
+autocmd FileType jsx noremap <buffer> <F2> :call JsxBeautify()<cr>
 " for html
-autocmd FileType html noremap <buffer> <c-b> :call HtmlBeautify()<cr>
+autocmd FileType html noremap <buffer> <F2> :call HtmlBeautify()<cr>
 " for css or scss
-autocmd FileType css noremap <buffer> <c-b> :call CSSBeautify()<cr>
+autocmd FileType css noremap <buffer> <F2> :call CSSBeautify()<cr>
 
 
 let NERDTreeShowHidden=1
