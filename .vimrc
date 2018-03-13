@@ -18,9 +18,9 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim	      "set Runtime path to inc Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim	    "set Runtime path to inc Vundle and initialize
 
-call vundle#begin()			                  " this is the call to begin the Vundle Plugin Opperation
+call vundle#begin()			                "this is the call to begin the Vundle Plugin Opperation
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'einars/translit.vim'
@@ -29,11 +29,13 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'Valloric/YouCompleteMe'
-"Plugin 'ternjs/tern_for_vim'
+Plugin 'ternjs/tern_for_vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'flowtype/vim-flow'
+Plugin 'scrooloose/nerdcommenter'
+"Plugin 'wookiehangover/jshint.vim'
 
 " TODO: tpope vim-fugitive plugin
 " Plugin 'tpope/vim-fugitive'
@@ -66,11 +68,13 @@ set guifont=Dejavu\ Sans\ Mono:h16 	"Set font and size
 
 
 "Advanced
-set ruler                       	   " Show row and column ruler information
-set undolevels=1000             	   " Number of undo levels
-set backspace=indent,eol,start  	   " Backspace behaviour
+set ruler                       	   "Show row and column ruler information
+set undolevels=1000             	   "Number of undo levels
+set backspace=indent,eol,start  	   "Backspace behaviour
 set background=dark   
-colorscheme badwolf					            " Color scheme
+colorscheme badwolf					            "Color scheme
+
+"au VimEnter *  NERDTree			         "Auto start nerdtree
 
 " Hotkeys mapping
 nnoremap <F3> :NERDTreeToggle<CR>
@@ -78,6 +82,13 @@ nnoremap <F4> :NERDTreeFind<CR>
 map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
 
+"Breaking bad habbits
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+"Auto brackets
 imap [ []<LEFT>
 imap ( ()<LEFT>
 imap { {}<LEFT>
@@ -85,16 +96,16 @@ imap { {}<LEFT>
 ".vimrc
 "map <c-f> :call JsBeautify()<cr>
 " or
-autocmd FileType javascript noremap <buffer>  <F2> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <F2> :call RangeJsBeautify()<cr>
 " for json
-autocmd FileType json noremap <buffer> <F2> :call JsonBeautify()<cr>
+autocmd FileType json noremap <buffer> <F2> :call RangeJsonBeautify()<cr>
 " for jsx
-autocmd FileType jsx noremap <buffer> <F2> :call JsxBeautify()<cr>
+autocmd FileType jsx noremap <buffer> <F2> :call RangeJsxBeautify()<cr>
 " for html
-autocmd FileType html noremap <buffer> <F2> :call HtmlBeautify()<cr>
+autocmd FileType html noremap <buffer> <F2> :call RangeHtmlBeautify()<cr>
 " for css or scss
-autocmd FileType css noremap <buffer> <F2> :call CSSBeautify()<cr>
+autocmd FileType css noremap <buffer> <F2> :call RangeCSSBeautify()<cr>
 
 
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 1
 let g:ctrlp_show_hidden = 1
