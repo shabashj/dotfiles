@@ -34,6 +34,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'bling/vim-bufferline'
 Plug 'tpope/vim-commentary'
 Plug 'flazz/vim-colorschemes'
+Plug 'Yggdroot/indentLine'
 
 " Beautify code
 Plug 'maksimr/vim-jsbeautify'
@@ -266,3 +267,6 @@ nmap ; :Denite buffer -split=floating -winrow=1<CR>
 nmap <leader>t :Denite file/rec -split=floating -winrow=1<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+
+" Highlight ejs syntax
+au BufNewFile,BufRead *.ejs set filetype=html
