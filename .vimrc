@@ -2,36 +2,40 @@
 "
 " Editor
 " ------------------------------------
-" Comment line                gcc
-" Uncomment line              gc
-" Beautify visual selection   F2
-" Translit                    Ctrl+Shift+t
+" Comment line                    gcc
+" Uncomment line                  gc
+" Beautify visual selection 	    F2
+" Translit                        Ctrl + Shift + t
+" Next buffer                     Ctrl + l
+" Previuos buffer                 Ctrl + h
 "
 " NerdTree
 " ------------------------------------
-" Open tree                   F3
-" Reveal current file in tree F4
+" Open tree                       F3
+" Reveal current file in tree     F4
 "
 " FZF magic
 " ------------------------------------
-" Open all files              Ctrl + p
-" Open tracked by git files   Ctrl + g
-" Open buffers                Ctrl + o
-" Saerch pattern in directory Ctrl + f
+" Open all files                  Ctrl + p
+" Open tracked by git files       Ctrl + g
+" Open buffers                    Ctrl + o
+" Search pattern in directory     Ctrl + f
+" Search u.cursor in directory    Ctrl + s
+" Results multi-selection         Tab
 " ------------------------------------
 "
 " Git commands
 " ------------------------------------
-" Git blame                   :Gblame
-" Git blame detail            :Gblame + o
-" Git status                  :Gstatus
-" Git diff current file       :Gdiff
-
+" Git blame                       :Gblame
+" Git blame detail                :Gblame + o
+" Git status                      :Gstatus
+" Git diff current file				    :Gdiff
 
 set nocompatible
 filetype off
 
 call plug#begin('~/.vim/plugged')
+Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
 Plug 'einars/translit.vim'
 Plug 'vim-airline/vim-airline'
@@ -64,7 +68,9 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 call plug#end()
 
-
+" ------------------------------------
+" ### Configurations ###
+" ------------------------------------
 syntax enable
 filetype plugin indent on
 
@@ -128,8 +134,8 @@ command! W  write
 " Hotkeys mapping
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :NERDTreeFind<CR>
-map <C-J> :bnext<CR>
-map <C-K> :bprev<CR>
+map <C-L> :bnext<CR>
+map <C-H> :bprev<CR>
 nnoremap <esc> :noh<return><esc>
 
 " Spellcheck
@@ -155,16 +161,41 @@ inoremap {<cr> {<cr>}<c-o><s-o>
 inoremap [<cr> [<cr>]<c-o><s-o>
 inoremap (<cr> (<cr>)<c-o><s-o>
 
-" Pretify code
-" for javascript
+" Default window split direction
+set splitbelow
+set splitright
+
+"set encoding=cp1251
+"set fileencodings=cp1251
+set helplang=ru,en
+
+
+" ------------------------------------
+" ### Plugins ###
+" ------------------------------------
+
+" === Startify === "
+let g:startify_bookmarks = [
+            \ { 'v': '~/.vimrc' },
+            \ { 'z': '~/.zshrc' },
+            \ ]
+
+let g:startify_lists = [
+        \ { 'type': 'files',     'header': ['   Files']            },
+        \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
+        \ { 'type': 'sessions',  'header': ['   Sessions']       },
+        \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+        \ ]
+
+
+" === Nerd Tree === "
+let NERDTreeShowHidden = 1
+
+" === JS Beautify === "
 autocmd FileType javascript noremap <buffer>  <F2> :call RangeJsBeautify()<cr>
-" for json
 autocmd FileType json noremap <buffer> <F2> :call RangeJsonBeautify()<cr>
-" for jsx
 autocmd FileType jsx noremap <buffer> <F2> :call RangeJsxBeautify()<cr>
-" for html
 autocmd FileType html noremap <buffer> <F2> :call RangeHtmlBeautify()<cr>
-" for css or scss
 autocmd FileType css noremap <buffer> <F2> :call RangeCSSBeautify()<cr>
 
 
@@ -180,18 +211,7 @@ autocmd FileType css noremap <buffer> <F2> :call RangeCSSBeautify()<cr>
 " augroup END
 
 
-" NerdTree settings
-let NERDTreeShowHidden = 1
-
-" Default window split direction
-set splitbelow
-set splitright
-
-"set encoding=cp1251
-"set fileencodings=cp1251
-set helplang=ru,en
-
-" Markdowm settings
+" === vim-livedown Live markdown === "
 " should markdown preview get shown automatically upon opening markdown buffer
 let g:livedown_autorun = 1
 " should the browser window pop-up upon previewing
@@ -210,7 +230,11 @@ nnoremap <silent> <C-p> :Files <CR>
 nnoremap <silent> <C-g> :GFiles <CR>
 nnoremap <silent> <C-o> :Buffers <CR>
 nnoremap <C-f> :Rg 
+nnoremap <C-s> :Rg <C-r>=expand('<cword>')<CR>
 
+function! Escape(stuff)
+    return substitute(escape(a:stuff, '\/.*$^~[]'), "\n", '\\n', "g")
+endfunction
 
 " === coc.nvim === "
 nmap <silent> <leader>dd <Plug>(coc-definition)
