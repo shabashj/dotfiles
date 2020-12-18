@@ -41,3 +41,6 @@ brew cask install ${CASKS[@]}
 
 echo "Clone configs..."
 git clone https://github.com/shabashj/dotfiles.git ~/
+
+touch ~/.zshrc
+echo "source dotfiles/.zshrc" >> ~/.zshrc
