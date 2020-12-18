@@ -41,14 +41,6 @@ export NVM_DIR="$HOME/.nvm"
 # ZSH_THEME="sunrise"
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-POWERLEVEL9K_SHORTEN_DELIMITER=''
-POWERLEVEL9K_SHORTEN_STRATEGY=truncate_from_right
-
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -136,6 +128,19 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# ZSH Configs
+POWERLEVEL9K_PROMPT_ON_NEWLINE=false
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+
+POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=10
+POWERLEVEL9K_VCS_SHORTEN_LENGTH=17
+POWERLEVEL9K_VCS_SHORTEN_STRATEGY=truncate_middle
+
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_DELIMITER=''
+POWERLEVEL9K_SHORTEN_STRATEGY=truncate_from_right
+
 
 # Vim
 alias e="nvim"
@@ -213,8 +218,7 @@ fgc() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
-# Poverlevel9k zsh theme
-# POWERLEVEL9K_USER_DEFAULT_BACKGROUND='red'
+
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
