@@ -21,5 +21,23 @@ PACKAGES=(
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
 
+echo "Cleaning up..."
+brew cleanup
+
+echo "Installing cask..."
+brew install caskroom/cask/brew-cask
+
+CASKS=(
+    firefox
+    google-chrome
+    iterm2
+    slack
+    spectacle
+    vlc
+)
+
+echo "Installing cask apps..."
+brew cask install ${CASKS[@]}
+
 echo "Clone configs..."
 git clone https://github.com/shabashj/dotfiles.git ~/
