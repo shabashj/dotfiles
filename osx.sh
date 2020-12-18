@@ -1,1 +1,1 @@
-cp .vimrc $HOME
+cp .vimrc .zshrc $HOME
