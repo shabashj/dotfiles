@@ -144,6 +144,8 @@ POWERLEVEL9K_SHORTEN_STRATEGY=truncate_from_right
 
 # Vim
 alias e="nvim"
+alias vi="nvim"
+alias vim="nvim"
 alias last="ls -tr | tail -1"
 
 # Markdown
@@ -167,7 +169,6 @@ alias r="cd ~/Repos/products/trc-client-rbox/"
 alias rs="cd ~/Repos/products/trc-client-rbox/src/test/selenium-js/"
 alias rbox="cd ~/Repos/products/trc-client-rbox/ && mvn test -Drun-client-proxy -DskipTests -Dskip.node"
 alias hosts="sudo nvim /etc/hosts"
-
 
 #alias selenium="cd /Users/evgeni.s/Repos/units/node_modules/taboola-nightwatch/selenium_drivers/ && java -Dwebdriver.chromer=./chredriver -jar selenium-server-standalone-3.8.1.jar"
 #alias bmproxy="/Users/evgeni.s/Repos/units/node_modules/taboola-nightwatch/selenium_drivers/bmp/bin/browsermob-proxy --port 9090 --use-littleproxy true"
