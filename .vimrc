@@ -225,7 +225,7 @@ let g:livedown_browser = "chrome"
 hi def link jsObjectKey Label
 
 
-" === FZF key bindings === "
+" === FZF === "
 nnoremap <silent> <C-p> :Files <CR>
 nnoremap <silent> <C-g> :GFiles <CR>
 nnoremap <silent> <C-o> :Buffers <CR>

@@ -141,6 +141,11 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=''
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_from_right
 
+# Edit frequent files
+alias ed="e ~/my-wiki/rabotai/draft.md"
+alias ev="e ~/dotfiles/.vimrc"
+alias ez="e ~/dotfiles/.zshrc"
+alias sz="source ~/.zshrc"
 
 # Vim
 alias e="nvim"
@@ -148,12 +153,7 @@ alias vi="nvim"
 alias vim="nvim"
 alias last="ls -tr | tail -1"
 
-# Markdown
-alias ed="e ~/my-wiki/rabotai/draft.md"
-alias ev="e ~/.vimrc"
-alias ez="e ~/.zshrc"
-alias sz="source ~/.zshrc"
-# Units
+# Video
 alias u="cd ~/Repos/units/"
 
 # Newsroom
@@ -191,7 +191,12 @@ alias sizeOf="du -hcs "
 # --------------------------------------
 # fzf Config
 # --------------------------------------
-export FZF_DEFAULT_COMMAND='fd --type f'
+# Setting rg as the default source for fzf
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
+
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
