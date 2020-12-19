@@ -16,6 +16,8 @@ PACKAGES=(
     the_silver_searcher
     ripgrep
     grv
+    fzf
+    bat
 )
 
 echo "Installing packages..."

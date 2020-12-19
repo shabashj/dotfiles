@@ -226,6 +226,8 @@ hi def link jsObjectKey Label
 
 
 " === FZF === "
+let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+
 nnoremap <silent> <C-p> :Files <CR>
 nnoremap <silent> <C-g> :GFiles <CR>
 nnoremap <silent> <C-o> :Buffers <CR>
