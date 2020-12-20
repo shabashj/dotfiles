@@ -176,8 +176,8 @@ set helplang=ru,en
 
 " === Startify === "
 let g:startify_bookmarks = [
-            \ { 'v': '~/.vimrc' },
-            \ { 'z': '~/.zshrc' },
+            \ { 'v': '~/dotfiles/.vimrc' },
+            \ { 'z': '~/dotfiles/.zshrc' },
             \ ]
 
 let g:startify_lists = [

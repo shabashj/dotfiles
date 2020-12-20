@@ -16,38 +16,8 @@ nvm() {
   nvm "$@"
 }
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/usr/local/sbin:$PATH"
 
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/evgeni.s/.oh-my-zsh
-
-export NODE_PATH='/usr/local/lib/node_modules'
-
-export PATH="$PATH:$HOME/npm/bin"
-
-export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfi"
-export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
-
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-
-# ZSH_THEME="sunrise"
-# ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel9k/powerlevel9k"
-
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -60,7 +30,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -69,7 +39,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -94,14 +64,40 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 plugins=(
   git
   fzf
-#  osx
-#  web-search
-#  node
-#  npm
-#  zsh-autosuggestions
 )
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	# If you come from bash you might have to change your $PATH.
+	# export PATH=$HOME/bin:/usr/local/bin:$PATH
+	export PATH="/usr/local/sbin:$PATH"
+	export NODE_PATH='/usr/local/lib/node_modules'
+	export PATH="$PATH:$HOME/npm/bin"
+	export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfi"
+	export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+	export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+	export PATH="/usr/local/opt/ruby@2.5/bin:$PATH"
+	export PATH="/usr/local/opt/ruby@2.5/bin:$PATH"
+	export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
+	export NVM_DIR="$HOME/.nvm"
+	  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+	  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+	export JAVA_HOME=$(/usr/libexec/java_home)
+
+	# Path to your oh-my-zsh installation.
+	export ZSH=/Users/evgeni.s/.oh-my-zsh
+else
+	# Path to your oh-my-zsh installation.
+	echo "Its linux"
+	export ZSH=/home/shabashj/.oh-my-zsh
+	export XDG_CONFIG_HOME="$HOME/.config"
+  export PATH="$HOME/grv:$PATH"
+  alias w="cd /mnt/c/Users/shaba"
+fi
+
+
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
@@ -113,15 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
-else
-  export EDITOR='mvim'
 fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -141,17 +129,25 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=''
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_from_right
 
-# Edit frequent files
-alias ed="e ~/my-wiki/rabotai/draft.md"
-alias ev="e ~/dotfiles/.vimrc"
-alias ez="e ~/dotfiles/.zshrc"
-alias sz="source ~/.zshrc"
+# List files
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
 # Vim
 alias e="nvim"
 alias vi="nvim"
 alias vim="nvim"
 alias last="ls -tr | tail -1"
+
+# Edit frequent files
+alias ed="e ~/my-wiki/rabotai/draft.md"
+alias ev="e ~/dotfiles/.vimrc"
+alias ez="e ~/dotfiles/.zshrc"
+alias sz="source ~/.zshrc"
+
+# Git
+alias gst="git status"
 
 # Video
 alias u="cd ~/Repos/units/"
@@ -224,25 +220,9 @@ fgc() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
-
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export JAVA_HOME=$(/usr/libexec/java_home)
-
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 function path(){
     old=$IFS
     IFS=:
     printf "%s\n" $PATH
     IFS=$old
 }
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="/usr/local/opt/ruby@2.5/bin:$PATH"
-export PATH="/usr/local/opt/ruby@2.5/bin:$PATH"
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
