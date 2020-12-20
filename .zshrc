@@ -89,7 +89,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	export ZSH=/Users/evgeni.s/.oh-my-zsh
 else
 	# Path to your oh-my-zsh installation.
-	echo "Its linux"
+	echo "It's linux"
 	export ZSH=/home/shabashj/.oh-my-zsh
 	export XDG_CONFIG_HOME="$HOME/.config"
   export PATH="$HOME/grv:$PATH"
@@ -99,11 +99,7 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-
-# User configuration
-
 # export MANPATH="/usr/local/man:$MANPATH"
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
