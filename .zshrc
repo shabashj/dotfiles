@@ -64,6 +64,7 @@ ENABLE_CORRECTION="true"
 plugins=(
   git
   fzf
+  zsh-autosuggestions
 )
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
