@@ -36,6 +36,7 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
+Plug 'airblade/vim-rooter'
 Plug 'scrooloose/nerdtree'
 Plug 'einars/translit.vim'
 Plug 'vim-airline/vim-airline'
