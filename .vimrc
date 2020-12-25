@@ -44,6 +44,7 @@ Plug 'bling/vim-bufferline'
 Plug 'tpope/vim-commentary'
 Plug 'flazz/vim-colorschemes'
 Plug 'Yggdroot/indentLine'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Beautify code
 Plug 'maksimr/vim-jsbeautify'
@@ -117,17 +118,11 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-"colorscheme delek
-"colorscheme wombat
-"colorscheme monokai
-"colorscheme badwolf
-"colorscheme zellner
-"colorscheme solarized
+" Set color theme
+au ColorScheme * hi Normal ctermbg=None
+colorscheme dracula
 
-" Auto start nerdtree
-"au VimEnter *  NERDTree
-
-"Make vim less useable
+"Make vim more useable
 " Enable mouse
 set mouse=a
 command! W  write
