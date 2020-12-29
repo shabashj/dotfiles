@@ -184,6 +184,9 @@ let g:startify_lists = [
         \ ]
 
 
+" === Vim Rooter === "
+let g:rooter_patterns = ['.git', '=trc-client-rbox']
+
 " === Nerd Tree === "
 let NERDTreeShowHidden = 1
 
