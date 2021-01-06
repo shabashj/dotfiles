@@ -165,6 +165,15 @@ set splitright
 "set fileencodings=cp1251
 set helplang=ru,en
 
+" Vim's plugins tweaks
+" 1. Search down into subfolders
+set path+=**
+" 2. Display all matching files when we tab complete
+set wildmenu
+" - Hit tab to :find by partial match
+" - Use * to make it fuzzy
+" - :b lets you autocomplete any open buffers, ls - list of buffers
+
 
 " ------------------------------------
 " ### Plugins ###
