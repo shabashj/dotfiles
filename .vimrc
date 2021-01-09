@@ -134,12 +134,12 @@ map <C-L> :bnext<CR>
 map <C-H> :bprev<CR>
 nnoremap <esc> :noh<return><esc>
 
-" Spellcheck
-" autocmd BufRead,BufNewFile *.md setlocal spell
-map <F5> :setlocal spell! spelllang=en_us<CR>
-
 " Remove trailing spaces on F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" Spellcheck
+" autocmd BufRead,BufNewFile *.md setlocal spell
+map <F6> :setlocal spell! spelllang=en_us<CR>
 
 " Breaking bad habbits
 " noremap <Up> <NOP>
