@@ -1,3 +1,5 @@
+export TERM="xterm-256color"
+
 # Speed up ZSH 
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
