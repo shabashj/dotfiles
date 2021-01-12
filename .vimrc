@@ -163,7 +163,7 @@ set splitright
 
 "set encoding=cp1251
 "set fileencodings=cp1251
-set helplang=ru,en
+" set helplang=ru,en
 
 " Vim's plugins tweaks
 " 1. Search down into subfolders
