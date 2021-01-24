@@ -95,7 +95,7 @@ else
 	export ZSH=/home/shabashj/.oh-my-zsh
 	export XDG_CONFIG_HOME="$HOME/.config"
   export PATH="$HOME/grv:$PATH"
-  alias w="cd /mnt/c/Users/shaba"
+  alias win="cd /mnt/c/Users/shaba"
 fi
 
 
