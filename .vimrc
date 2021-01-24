@@ -56,8 +56,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'isRuslan/vim-es6'
 
 " Git
-Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
+Plug 'junegunn/gv.vim'
 
 " Markdowm with live preview
 Plug 'shime/vim-livedown'
