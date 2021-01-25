@@ -5,7 +5,6 @@
 " Comment line                    gcc
 " Uncomment line                  gc
 " Beautify visual selection 	    F2
-" Translit                        Ctrl + Shift + t
 " Next buffer                     Ctrl + l
 " Previuos buffer                 Ctrl + h
 "
@@ -38,7 +37,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-rooter'
 Plug 'scrooloose/nerdtree'
-Plug 'einars/translit.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'bling/vim-bufferline'
 Plug 'tpope/vim-commentary'
