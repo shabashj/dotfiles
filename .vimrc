@@ -55,6 +55,8 @@ Plug 'isRuslan/vim-es6'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
+Plug 'junegunn/gv.vim'
 
 " Markdowm with live preview
 Plug 'shime/vim-livedown'
