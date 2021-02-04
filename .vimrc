@@ -55,6 +55,7 @@ Plug 'isRuslan/vim-es6'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/gv.vim'
 
@@ -95,11 +96,11 @@ set number				   "Show line numbers
 
 set autoindent				   "Auto-indent new lines
 set expandtab
-set shiftwidth=2			   "Number of auto-indent spaces
+set shiftwidth=4			   "Number of auto-indent spaces
 set smartindent				   "Enable smart-indent
 set smarttab				   "Enable smart-tabs
-set softtabstop=2			   "Number of spaces per Tab
-set tabstop=2			   "Number of spaces per Tab
+set softtabstop=4			   "Number of spaces per Tab
+set tabstop=4			   "Number of spaces per Tab
 "set guifont=Dejavu\ Sans\ Mono:h16	   "Set font and size
 set guifont=Courier:h16
 
