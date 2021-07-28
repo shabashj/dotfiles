@@ -180,6 +180,10 @@ set wildmenu
 " ### Plugins ###
 " ------------------------------------
 
+let g:airline_section_b = ''
+
+
+
 " === Startify === "
 let g:startify_bookmarks = [
             \ { 'v': '~/dotfiles/.vimrc' },

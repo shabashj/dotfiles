@@ -1,3 +1,5 @@
+zmodload zsh/zprof
+
 export TERM="xterm-256color"
 
 # Speed up ZSH 
@@ -10,13 +12,13 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-nvm() {
-  echo "🚨 NVM not loaded! Loading now..."
-  unset -f nvm
-  export NVM_PREFIX=$(brew --prefix nvm)
-  [ -s "$NVM_PREFIX/nvm.sh" ] && . "$NVM_PREFIX/nvm.sh"
-  nvm "$@"
-}
+# nvm() {
+#   echo "🚨 NVM not loaded! Loading now..."
+#   unset -f nvm
+#   export NVM_PREFIX=$(brew --prefix nvm)
+#   [ -s "$NVM_PREFIX/nvm.sh" ] && . "$NVM_PREFIX/nvm.sh"
+#   nvm "$@"
+# }
 
 export BAT_THEME="Dracula"
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -85,7 +87,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	export NVM_DIR="$HOME/.nvm"
 	  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 	  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
-	export JAVA_HOME=$(/usr/libexec/java_home)
+	# export JAVA_HOME=$(/usr/libexec/java_home)
+
+    # Java paths
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
+    launchctl setenv JAVA_HOME $JAVA_HOME
+    export PATH=$PATH:$JAVA_HOME/bin
 
 	# Path to your oh-my-zsh installation.
 	export ZSH=/Users/evgeni.s/.oh-my-zsh
@@ -160,10 +167,13 @@ alias hud="cd ~/Repos/newsroom-hud-extension/newsroom-overlay"
 alias ct="cd ~/Repos/config-tool"
 
 # RBox
-alias r="cd ~/Repos/products/trc-client-rbox/"
+alias r="cd ~/Repos/products/trc-client-rbox/src/main/webapp"
 alias rs="cd ~/Repos/products/trc-client-rbox/src/test/selenium-js/"
-alias rbox="cd ~/Repos/products/trc-client-rbox/ && mvn test -Drun-client-proxy -DskipTests -Dskip.node"
+alias rbox="cd ~/Repos/products/trc-client-rbox && mvn test -Drun-client-proxy -DskipTests -Dskip.node"
 alias hosts="sudo nvim /etc/hosts"
+
+# UI Innovations
+alias ui="cd ~/Repos/ui-innovation"
 
 #alias selenium="cd /Users/evgeni.s/Repos/units/node_modules/taboola-nightwatch/selenium_drivers/ && java -Dwebdriver.chromer=./chredriver -jar selenium-server-standalone-3.8.1.jar"
 #alias bmproxy="/Users/evgeni.s/Repos/units/node_modules/taboola-nightwatch/selenium_drivers/bmp/bin/browsermob-proxy --port 9090 --use-littleproxy true"
